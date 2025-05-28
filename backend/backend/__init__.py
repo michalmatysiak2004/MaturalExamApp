@@ -1,0 +1,1 @@
+#chuj wam w dupe klienci oscamuje was na sianoi pozdro

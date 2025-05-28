@@ -1,0 +1,38 @@
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar";
+import { AuthProvider } from "./components/AuthContext";
+
+function Logout() {
+  localStorage.clear();
+  return <Navigate to="/" />;
+}
+
+function RegisterAndLogout() {
+  localStorage.clear();
+  return <Register />;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          
+          <Route path="/register" element={<RegisterAndLogout />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  );
+}
+
+export default App;
