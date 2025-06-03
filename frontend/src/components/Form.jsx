@@ -35,7 +35,11 @@ function Form({ route, method }) {
                 navigate("/login");
             }
         } catch (error) {
-            alert(error);
+            if (error.response && error.response.data && error.response.data.detail) {
+                alert(error.response.data.detail); // JWT zazwyczaj zwraca {"detail": "..."}
+            } else {
+                alert("Wystąpił błąd logowania");
+            }
         } finally {
             setLoading(false);
         }
@@ -45,21 +49,22 @@ function Form({ route, method }) {
         <form onSubmit={handleSubmit} className="form-container">
             <h1>{name}</h1>
             {!isLoggingin ? (
-                <input
-                className="form-input"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-            />
-            ): null }
-            <input
+               <input
                 className="form-input"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
             />
+            ): null }
+             <input
+                className="form-input"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+            />
+            
             <input
                 className="form-input"
                 type="password"
