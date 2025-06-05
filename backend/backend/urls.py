@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from core.views import CreateUserView, HomeDataView, user_info
+from core.views import CreateUserView, HomeDataView, user_info, CourseDataView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.views import MyTokenObtainPairView 
 
@@ -12,6 +12,7 @@ urlpatterns = [
     path('api-auth/', include("rest_framework.urls")),
     path('api/home/', HomeDataView.as_view(), name='home_data'),
     path('api/user/', user_info, name='user_info'),
+    path('api/course/<int:courseId>/',CourseDataView.as_view(), name='course-data')
 ]
 
 # nie uzywaj localstorage tylko zrób tak zeby pobierał z api Token

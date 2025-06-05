@@ -1,0 +1,71 @@
+.lesson-list {
+  width: 300px;
+  background-color: #0b0f24;
+  padding: 1rem;
+  border-radius: 12px;
+  color: #e0e6f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.lesson-list h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #aab4f9;
+  font-weight: 600;
+}
+
+.lesson-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #121936;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #1f2a4b;
+  transition: background 0.2s ease, border 0.2s ease;
+  cursor: pointer;
+}
+
+.lesson-item:hover {
+  background-color: #1a2149;
+  border-color: #2c3b66;
+}
+
+.lesson-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #748ffc;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.lesson-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.lesson-title {
+  color: #f0f4ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lesson-time {
+  color: #9aa7d9;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}

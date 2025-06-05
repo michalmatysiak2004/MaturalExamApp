@@ -39,3 +39,10 @@
 .navbar-logo:hover {
   opacity: 0.8;
 }
+
+
+.navbar-user {
+  color: white;
+  margin-right: 1rem;
+  font-style: italic;
+}

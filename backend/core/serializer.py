@@ -31,7 +31,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
             return data
         else:
-            raise exceptions.AuthenticationFailed('No active account found with the given credentials')
+            raise exceptions.AuthenticationFailed('Niepoprawny email lub hasło')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,20 +50,21 @@ class UserSerializer(serializers.ModelSerializer):
        
         return user
 
-
-
-class CourseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Course
-        fields = ['id', 'name', 'description', 'prize']
-       
-
-    
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
         fields = ['id', 'name', 'description', 'course']
         extra_kwargs = {'course': {"read_only": True}}
+
+class CourseSerializer(serializers.ModelSerializer):
+    belongto = LessonSerializer(many=True, read_only=True)
+    class Meta:
+        model = Course
+        fields = ['id', 'name', 'description', 'prize', 'belongto']
+       
+
+    
+
 
 class UserCourseSerializer(serializers.ModelSerializer):
     class Meta: 

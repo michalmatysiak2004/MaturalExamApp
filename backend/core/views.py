@@ -2,13 +2,13 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from .models import *
 from rest_framework.response import Response
-#from django.contrib.auth.models import User
+
 from .serializer import * 
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.views import TokenObtainPairView
-
+from django.shortcuts import get_object_or_404
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
@@ -51,7 +51,15 @@ class HomeDataView(APIView):
             'courses': courses_serialized,
             'owned_courses': owned_courses,
         })
+        
+class CourseDataView(APIView):
+    permission_classes = [AllowAny]
 
+    def get(self, request, courseId):
+        course = Course.objects.get(id=courseId)
+        serializer = CourseSerializer(course)
+    
+        return Response({'course' : serializer.data})
 
 
 

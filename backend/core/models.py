@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import  AbstractUser
-# Create your models here.
+
 
 class Course(models.Model): 
     name = models.CharField(max_length = 200)
@@ -14,13 +14,14 @@ class Lesson(models.Model):
     name = models.CharField(max_length = 200)
     description = models.CharField(max_length = 300)
     course = models.ForeignKey(Course, on_delete= models.CASCADE, related_name = "belongto")
+    time = models.IntegerField(null=True)
     def __str__(self):
         return f"Lekcja: {self.name}"
     
 
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
-    USERNAME_FIELD = 'email'  # 👈 To jest kluczowe
+    USERNAME_FIELD = 'email' 
     REQUIRED_FIELDS = ['username']
     def __str__(self):
         return self.username

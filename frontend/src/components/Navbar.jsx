@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';  
 import { AuthContext } from './AuthContext';
-import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
-  const { isLoggedIn, logout } = useContext(AuthContext);
+  const { isLoggedIn, user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const handleLogout = () => {
     logout();
-     window.location.href = "/";
+    navigate("/");  // bez przeładowania strony
   };
 
   return (
@@ -18,8 +19,12 @@ const Navbar = () => {
         <Link to="/" className="navbar-link">Home</Link>
         <Link to="/courses" className="navbar-link">Kursy</Link>
         <Link to="/about" className="navbar-link">O nas</Link>
-        {isLoggedIn ? (
-          <button onClick={handleLogout} className="navbar-button">Wyloguj się</button>
+
+        {isLoggedIn && user ? (
+          <>
+            <span className="navbar-user">Witaj, {user.username}!</span>
+            <button onClick={handleLogout} className="navbar-button">Wyloguj się</button>
+          </>
         ) : (
           <Link to="/login" className="navbar-button">Zaloguj się</Link>
         )}

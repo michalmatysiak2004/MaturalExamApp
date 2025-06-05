@@ -1,0 +1,67 @@
+.course-card {
+  background: linear-gradient(to right, #f7f9fb, #e4ecf5);
+  border: 1px solid #d0d7e4;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.course-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.math-symbol {
+  font-size: 28px;
+  color: #3b82f6; /* niebieski */
+}
+
+.description {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.buttons {
+  margin-top: 16px;
+    display: flex;
+}
+
+button {
+  padding: 10px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.preview-button {
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+}
+
+.preview-button:hover {
+  background-color: #c7d2fe;
+}
+
+.buy-button {
+  background-color: #4ade80;
+  color: white;
+  
+}
+
+.buy-button:hover {
+  background-color: #22c55e;
+}
+
+.owned-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #10b981;
+  display: flex;
+}
