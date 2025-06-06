@@ -1,4 +1,4 @@
-.lesson-list {
+.lessonlist-list {
   width: 300px;
   background-color: #0b0f24;
   padding: 1rem;
@@ -7,14 +7,14 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.lesson-list h2 {
+.lessonlist-list h2 {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: #aab4f9;
   font-weight: 600;
 }
 
-.lesson-scroll {
+.lessonlist-scroll {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -22,7 +22,7 @@
   overflow-y: auto;
 }
 
-.lesson-item {
+.lessonlist-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,12 +34,12 @@
   cursor: pointer;
 }
 
-.lesson-item:hover {
+.lessonlist-item:hover {
   background-color: #1a2149;
   border-color: #2c3b66;
 }
 
-.lesson-dot {
+.lessonlist-dot {
   width: 10px;
   height: 10px;
   background-color: #748ffc;
@@ -48,7 +48,7 @@
   flex-shrink: 0;
 }
 
-.lesson-content {
+.lessonlist-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,14 +57,14 @@
   font-size: 0.95rem;
 }
 
-.lesson-title {
+.lessonlist-title {
   color: #f0f4ff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.lesson-time {
+.lessonlist-time {
   color: #9aa7d9;
   font-size: 0.85rem;
   flex-shrink: 0;

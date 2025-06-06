@@ -1,9 +1,30 @@
-import "../styles/Coursecard.css"; // import stylów
+import { useEffect } from "react";
+import "../styles/Coursecard.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Coursecard = ({ course, isOwned }) => {
-  console.log("isOwned", isOwned);
-  console.log("course", course);
+  const [coursetime, setCourseTime] = useState(0);
+
+  const [lessoncount, setLessonCount] = useState(0);
+  useEffect(() => {
+    if (Array.isArray(course.belongto)) {
+      setLessonCount(course.belongto.length);
+      setCourseTime(calculateTotalTime(course.belongto));
+    } else {
+      setLessonCount(0);
+      setCourseTime(0);
+    }
+  }, [course.belongto]);
+
   const navigate = useNavigate();
+
+  function calculateTotalTime(lessons) {
+    let total = lessons.reduce((sum, lesson) => sum + Number(lesson.time), 0);
+    total = total / 3600; 
+    let totalRounded = Math.round(total) / 1; 
+    return  totalRounded
+  }
+
   function buyCourse(courseId) {
     navigate(`/buy-course/${courseId}`);
   }
@@ -22,10 +43,10 @@ const Coursecard = ({ course, isOwned }) => {
         <strong>Cena:</strong> {course.prize} PLN
       </p>
       <p>
-        <strong>Lekcje:</strong> {course.lessons}
+        <strong>Lekcje:</strong> {lessoncount}{" "}
       </p>
       <p>
-        <strong>Czas trwania:</strong> {course.time} godzin
+        <strong>Czas trwania:</strong> {coursetime} godzin
       </p>
 
       <div className="buttons">

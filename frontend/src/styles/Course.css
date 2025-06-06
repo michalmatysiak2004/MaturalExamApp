@@ -1,0 +1,46 @@
+.course-page {
+  padding: 20px;
+  height: 90vh; /* prawie cała wysokość okna */
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1; /* zajmuje resztę miejsca pod nagłówkiem */
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Lessonlist masz już stylizowany na 300px szerokości, więc tylko dopasuj, żeby był w content-wrapper */
+
+
+/* kontener na opis/wideo */
+.lesson-video {
+  flex-grow: 1; /* zajmuje pozostałe miejsce */
+  background-color: #086d08;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+}
+
+
+.lesson {
+  background: rgb(151, 29, 29);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #0b0f24;
+}
+
+.lesson-time {
+  font-size: 16px;
+  color: #555;
+}

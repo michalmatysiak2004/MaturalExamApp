@@ -53,7 +53,7 @@ class UserSerializer(serializers.ModelSerializer):
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
-        fields = ['id', 'name', 'description', 'course']
+        fields = ['id', 'name', 'description', 'course', 'time']
         extra_kwargs = {'course': {"read_only": True}}
 
 class CourseSerializer(serializers.ModelSerializer):

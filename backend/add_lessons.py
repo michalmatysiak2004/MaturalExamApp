@@ -55,7 +55,7 @@ lessons_data = [
 
 def time_str_to_minutes(time_str):
     minutes, seconds = map(int, time_str.split(":"))
-    return minutes + (1 if seconds >= 30 else 0)
+    return minutes * 60 + seconds 
 
 for name, time_str in lessons_data:
     Lesson.objects.create(
