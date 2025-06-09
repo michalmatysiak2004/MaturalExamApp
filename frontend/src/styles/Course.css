@@ -3,8 +3,8 @@
   height: 85vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #1e2a47, #265e4a);
-  color: #dbe9df;
+  background: linear-gradient(135deg, #f8fffa, #e0f3eb);
+  color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -17,44 +17,44 @@
 
 .lesson-video {
   flex-grow: 1;
-  background-color: #1d2b22;
+  background-color: #ffffff;
   padding: 25px;
   border-radius: 12px;
   overflow-y: auto;
-  box-shadow: 0 4px 15px rgba(114, 160, 114, 0.5);
-  color: #f0f3f5;
+  box-shadow: 0 4px 15px rgba(180, 220, 210, 0.3);
+  color: #2e2e2e;
   transition: box-shadow 0.3s ease;
 }
 
 .lesson-video:hover {
-  box-shadow: 0 6px 25px rgba(114, 160, 114, 0.9);
+  box-shadow: 0 6px 25px rgba(180, 220, 210, 0.5);
 }
 
 .lesson {
-  background: #1e2a47;
+  background: #f4fdf9;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(114, 160, 114, 0.4);
-  border: 1px solid #3a6b47;
+  box-shadow: 0 0 15px rgba(180, 220, 210, 0.3);
+  border: 1px solid #c0e5d5;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lesson:hover {
-  background-color: #2a7a4a;
-  box-shadow: 0 0 20px rgba(143, 188, 143, 0.6);
+  background-color: #e5f9ed;
+  box-shadow: 0 0 20px rgba(160, 230, 200, 0.5);
 }
 
 .lesson-title {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 18px;
-  color: #8fbc8f;
-  text-shadow: 0 0 6px #72a072;
+  color: #2e8b57;
+  text-shadow: 0 0 4px #b0e0c3;
 }
 
 .lesson-time {
   font-size: 16px;
-  color: #cbd6dd;
+  color: #666;
   font-weight: 500;
   letter-spacing: 0.05em;
   font-style: italic;

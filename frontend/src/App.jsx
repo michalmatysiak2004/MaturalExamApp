@@ -1,4 +1,4 @@
-import React from "react";
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import { AuthProvider } from "./components/AuthContext";
 import BuyCourse from "./pages/BuyCourse";
 import Course from "./pages/Course";
+import './styles/App.css';
 function Logout() {
   localStorage.clear();
   return <Navigate to="/" />;

@@ -31,14 +31,14 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem(ACCESS_TOKEN);
-    
+    console.log("wylogowywuje");
     setIsLoggedIn(false);
   };
 
   useEffect(() => {
 
     if (localStorage.getItem(ACCESS_TOKEN)) {
-      fetchUser(); // przy starcie, jeśli token jest – pobierz usera
+      fetchUser(); 
     } else {
       setLoadingUser(false);
     }

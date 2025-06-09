@@ -3,33 +3,34 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px 30px;
-  background: linear-gradient(180deg, #265e4a 0%, #1e2a47 100%);
-  color: #dbe9df;
+  background-color: #e8f5f1 
+  ;
+  color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   user-select: none;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(42, 122, 74, 0.6);
+  box-shadow: 0 4px 12px rgba(180, 220, 210, 0.5);
 }
 
 .navbar:hover {
-  background: linear-gradient(180deg, #1e2a47 0%, #265e4a 100%);
+  background: linear-gradient(180deg, #e8f5f1 0%, #f5fffa 100%);
 }
 
 .navbar-logo {
   font-weight: 900;
   font-size: 24px;
-  color: #8fbc8f;
+  color: #2e8b57;
   text-decoration: none;
   letter-spacing: 1.5px;
-  text-shadow: 0 0 6px #72a072;
+  text-shadow: 0 0 4px #b0e0c3;
   cursor: pointer;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navbar-logo:hover {
-  color: #72a072;
-  text-shadow: 0 0 12px #72a072;
+  color: #3cb371;
+  text-shadow: 0 0 10px #a0d7b3;
 }
 
 .navbar-links {
@@ -39,7 +40,7 @@
 }
 
 .navbar-link {
-  color: #dbe9df;
+  color: #333;
   text-decoration: none;
   font-weight: 600;
   font-size: 16px;
@@ -55,14 +56,14 @@
   left: 0;
   bottom: -4px;
   width: 0;
-  height: 3px;
-  background: #72a072;
+  height: 2px;
+  background: #3cb371;
   border-radius: 2px;
   transition: width 0.3s ease;
 }
 
 .navbar-link:hover {
-  color: #8fbc8f;
+  color: #3cb371;
 }
 
 .navbar-link:hover::after {
@@ -70,7 +71,7 @@
 }
 
 .navbar-button {
-  background: #3a6b47;
+  background: #3cb371;
   color: white;
   border: none;
   padding: 8px 18px;
@@ -78,30 +79,28 @@
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(114, 160, 114, 0.6);
+  box-shadow: 0 4px 10px rgba(60, 179, 113, 0.3);
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.2s ease;
-  user-select: none;
 }
 
 .navbar-button:hover {
-  background-color: #72a072;
-  box-shadow: 0 6px 18px rgba(143, 188, 143, 0.8);
+  background-color: #2e8b57;
+  box-shadow: 0 6px 16px rgba(46, 139, 87, 0.4);
   transform: scale(1.05);
 }
 
 .navbar-user {
-  color: #dbe9df;
+  color: #555;
   margin-right: 1.5rem;
   font-style: italic;
   font-weight: 600;
-  text-shadow: 0 0 6px #72a072;
-  user-select: none;
+  text-shadow: 0 0 3px #b0e0c3;
 }
 
-/* Responsywność na mniejsze ekrany */
+/* Responsywność */
 @media (max-width: 600px) {
   .navbar {
     flex-wrap: wrap;

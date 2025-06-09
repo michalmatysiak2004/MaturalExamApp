@@ -9,6 +9,9 @@ from rest_framework.permissions import IsAuthenticated, AllowAny, IsAuthenticate
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.shortcuts import get_object_or_404
+
+
+
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
@@ -31,8 +34,8 @@ class CreateUserView(generics.CreateAPIView):
 
 
 class HomeDataView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
+    
+    permission_classes = [AllowAny]
     def get(self, request):
      
         courses = Course.objects.all()
@@ -61,7 +64,7 @@ class CourseDataView(APIView):
         if request.user.is_authenticated:
             finished_lessons = list(
                 LessonProgress.objects.filter(
-                    user=request.user,
+                    user=request.user
                     
                     ).values_list('lesson_id', flat=True)
             ) 
