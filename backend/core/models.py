@@ -15,6 +15,7 @@ class Lesson(models.Model):
     description = models.CharField(max_length = 300)
     course = models.ForeignKey(Course, on_delete= models.CASCADE, related_name = "belongto")
     time = models.IntegerField(null=True)
+    finished = models.BooleanField(default=False)
     def __str__(self):
         return f"Lekcja: {self.name}"
     
@@ -30,8 +31,14 @@ class UserCourse(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='purchased_courses')
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     purchase_date = models.DateTimeField(auto_now_add=True)
-
+    
     def __str__(self):
         return f"{self.user.username} - {self.course.name}"
+    
+class LessonProgress(models.Model):
+    
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    
     
 

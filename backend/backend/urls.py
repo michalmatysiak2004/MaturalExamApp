@@ -12,7 +12,8 @@ urlpatterns = [
     path('api-auth/', include("rest_framework.urls")),
     path('api/home/', HomeDataView.as_view(), name='home_data'),
     path('api/user/', user_info, name='user_info'),
-    path('api/course/<int:courseId>/',CourseDataView.as_view(), name='course-data')
+    path('api/course/<int:courseId>/',CourseDataView.as_view(), name='course-data'),
+    
 ]
 
 # nie uzywaj localstorage tylko zrób tak zeby pobierał z api Token

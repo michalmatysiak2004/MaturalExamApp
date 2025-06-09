@@ -53,13 +53,25 @@ class HomeDataView(APIView):
         })
         
 class CourseDataView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get(self, request, courseId):
         course = Course.objects.get(id=courseId)
         serializer = CourseSerializer(course)
-    
-        return Response({'course' : serializer.data})
+        if request.user.is_authenticated:
+            finished_lessons = list(
+                LessonProgress.objects.filter(
+                    user=request.user,
+                    
+                    ).values_list('lesson_id', flat=True)
+            ) 
+        else : finished_lessons = []
+            
+        return Response({
+            'course' : serializer.data,
+            'finished_lessons' : finished_lessons
+            
+            })
 
 
 

@@ -53,7 +53,7 @@ class UserSerializer(serializers.ModelSerializer):
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
-        fields = ['id', 'name', 'description', 'course', 'time']
+        fields = ['id', 'name', 'description', 'course', 'time', 'finished']
         extra_kwargs = {'course': {"read_only": True}}
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -63,14 +63,16 @@ class CourseSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'prize', 'belongto']
        
 
-    
-
-
 class UserCourseSerializer(serializers.ModelSerializer):
     class Meta: 
         model = Course
         fields = '__all__'
 
+
+class LessonProgressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= LessonProgress
+        fields = '__all__'
 
 
 
