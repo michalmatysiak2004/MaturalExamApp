@@ -2,47 +2,120 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
+  padding: 14px 30px;
+  background: linear-gradient(180deg, #265e4a 0%, #1e2a47 100%);
+  color: #dbe9df;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(42, 122, 74, 0.6);
+}
+
+.navbar:hover {
+  background: linear-gradient(180deg, #1e2a47 0%, #265e4a 100%);
 }
 
 .navbar-logo {
-  font-weight: bold;
-  font-size: 20px;
-  color: white;
+  font-weight: 900;
+  font-size: 24px;
+  color: #8fbc8f;
   text-decoration: none;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 6px #72a072;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #72a072;
+  text-shadow: 0 0 12px #72a072;
 }
 
 .navbar-links {
   display: flex;
-  gap: 15px;
+  gap: 24px;
   align-items: center;
 }
 
 .navbar-link {
-  color: white;
+  color: #dbe9df;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: #72a072;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #8fbc8f;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
 }
 
 .navbar-button {
-  background-color: #555;
+  background: #3a6b47;
   color: white;
   border: none;
-  padding: 6px 12px;
+  padding: 8px 18px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 15px;
   cursor: pointer;
-  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(114, 160, 114, 0.6);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  user-select: none;
 }
 
-.navbar-button:hover,
-.navbar-link:hover,
-.navbar-logo:hover {
-  opacity: 0.8;
+.navbar-button:hover {
+  background-color: #72a072;
+  box-shadow: 0 6px 18px rgba(143, 188, 143, 0.8);
+  transform: scale(1.05);
 }
-
 
 .navbar-user {
-  color: white;
-  margin-right: 1rem;
+  color: #dbe9df;
+  margin-right: 1.5rem;
   font-style: italic;
+  font-weight: 600;
+  text-shadow: 0 0 6px #72a072;
+  user-select: none;
+}
+
+/* Responsywność na mniejsze ekrany */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .navbar-user {
+    margin: 8px auto 0 auto;
+  }
 }

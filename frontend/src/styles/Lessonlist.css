@@ -1,51 +1,73 @@
 .lessonlist-list {
   width: 300px;
-  background-color: #0b0f24;
+  background: linear-gradient(180deg, #265e4a 0%, #1e2a47 100%);
   padding: 1rem;
   border-radius: 12px;
-  color: #e0e6f8;
+  color: #dbe9df;
   font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 15px rgba(42, 122, 74, 0.6);
 }
 
 .lessonlist-list h2 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #aab4f9;
-  font-weight: 600;
+  color: #8fbc8f;
+  font-weight: 700;
+  text-shadow: 0 0 6px #72a072;
 }
 
 .lessonlist-scroll {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
   max-height: 80vh;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #72a072 #1e2a47;
+}
+
+.lessonlist-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lessonlist-scroll::-webkit-scrollbar-track {
+  background: #1e2a47;
+  border-radius: 8px;
+}
+
+.lessonlist-scroll::-webkit-scrollbar-thumb {
+  background: #72a072;
+  border-radius: 8px;
 }
 
 .lessonlist-item {
   display: flex;
+  width: 85%;
   align-items: center;
   justify-content: space-between;
-  background-color: #121936;
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #1f2a4b;
-  transition: background 0.2s ease, border 0.2s ease;
+  background-color: #1e2a47;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #3a6b47;
+  box-shadow: 0 0 10px rgba(114, 160, 114, 0.3);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .lessonlist-item:hover {
-  background-color: #1a2149;
-  border-color: #2c3b66;
+  background-color: #3a6b47;
+  border-color: #8fbc8f;
+  box-shadow: 0 0 20px rgba(143, 188, 143, 0.7);
 }
 
 .lessonlist-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #748ffc;
+  width: 12px;
+  height: 12px;
+  background-color: #8fbc8f;
   border-radius: 50%;
-  margin-right: 0.8rem;
+  margin-right: 1rem;
   flex-shrink: 0;
+  box-shadow: 0 0 6px #8fbc8f;
 }
 
 .lessonlist-content {
@@ -54,18 +76,58 @@
   align-items: center;
   width: 100%;
   gap: 1rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
 }
 
 .lessonlist-title {
-  color: #f0f4ff;
+  color: #dbe9df;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 600;
+  text-shadow: 0 0 5px #72a072;
 }
 
 .lessonlist-time {
-  color: #9aa7d9;
-  font-size: 0.85rem;
+  color: #a8bca8;
+  font-size: 0.9rem;
   flex-shrink: 0;
+  font-style: italic;
+}
+
+.lessonlist-finished {
+  color: #72a072;
+  filter: drop-shadow(0 0 6px #72a072);
+  animation: pulse-green 2s infinite ease-in-out;
+  font-size: 18px;
+}
+
+.lessonlist-notfinished {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+/* Animacje */
+@keyframes pulse-green {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px #72a072);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #8fbc8f);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse-outline {
+  0%, 100% {
+    border-color: #8fbc8f;
+    box-shadow: 0 0 0 0 rgba(143, 188, 143, 0.7);
+  }
+  50% {
+    border-color: #a2d5a2;
+    box-shadow: 0 0 10px 6px rgba(143, 188, 143, 0);
+  }
 }

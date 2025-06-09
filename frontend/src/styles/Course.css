@@ -1,46 +1,61 @@
 .course-page {
   padding: 20px;
-  height: 90vh; /* prawie cała wysokość okna */
+  height: 85vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #1e2a47, #265e4a);
+  color: #dbe9df;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content-wrapper {
-  flex: 1; /* zajmuje resztę miejsca pod nagłówkiem */
+  flex: 1;
   display: flex;
   gap: 20px;
   height: 100%;
 }
 
-/* Lessonlist masz już stylizowany na 300px szerokości, więc tylko dopasuj, żeby był w content-wrapper */
-
-
-/* kontener na opis/wideo */
 .lesson-video {
-  flex-grow: 1; /* zajmuje pozostałe miejsce */
-  background-color: #086d08;
-  padding: 20px;
-  border-radius: 10px;
+  flex-grow: 1;
+  background-color: #1d2b22;
+  padding: 25px;
+  border-radius: 12px;
   overflow-y: auto;
-  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 15px rgba(114, 160, 114, 0.5);
+  color: #f0f3f5;
+  transition: box-shadow 0.3s ease;
 }
 
+.lesson-video:hover {
+  box-shadow: 0 6px 25px rgba(114, 160, 114, 0.9);
+}
 
 .lesson {
-  background: rgb(151, 29, 29);
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #1e2a47;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(114, 160, 114, 0.4);
+  border: 1px solid #3a6b47;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lesson:hover {
+  background-color: #2a7a4a;
+  box-shadow: 0 0 20px rgba(143, 188, 143, 0.6);
 }
 
 .lesson-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #0b0f24;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #8fbc8f;
+  text-shadow: 0 0 6px #72a072;
 }
 
 .lesson-time {
   font-size: 16px;
-  color: #555;
+  color: #cbd6dd;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-style: italic;
 }

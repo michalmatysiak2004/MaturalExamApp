@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css";
 import LoadingIndicator from "./LoadingIndicator";
-import { AuthContext } from "./AuthContext"; // ✅ import kontekstu
+import { AuthContext } from "./AuthContext"; 
 import { Link } from "react-router-dom";
 function Form({ route, method }) {
   const [username, setUsername] = useState("");
@@ -12,7 +12,7 @@ function Form({ route, method }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // ✅ użycie login() z kontekstu
+  const { login } = useContext(AuthContext);
 
   const [name, messege, isLoggingin] =
     method === "login"
@@ -26,8 +26,8 @@ function Form({ route, method }) {
     try {
       const res = await api.post(route, { email, username, password });
       if (method === "login") {
-        // ✅ użycie kontekstowego login()
-        login(res.data.access); // zapisuje do localStorage i ustawia isLoggedIn = true
+        
+        login(res.data.access); 
         localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
         navigate("/");
       } else {
@@ -35,7 +35,7 @@ function Form({ route, method }) {
       }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.detail) {
-        alert(error.response.data.detail); // JWT zazwyczaj zwraca {"detail": "..."}
+        alert(error.response.data.detail); 
       } else {
         alert("Wystąpił błąd logowania");
       }
